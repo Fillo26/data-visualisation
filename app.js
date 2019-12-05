@@ -10,10 +10,12 @@ let urlData = 'https://kod.brno.cz/dataset/862b83e0-54a1-4851-80e9-0976c9ce3648/
 app.use(cors());
 app.use('/public', express.static(__dirname + '/public'));
 
+///////////////////////////////////////////// Sends Main HTML site to the user  /////////////////////////////////////////////////
 app.get('/', function(req, res) {
     res.sendFile(__dirname +  '/index.html');
 });
 
+/////////////////////////////////// Download and save csv data locally, convert csv to JSON ///////////////////////////////////////
 request(urlData, function (err, response, body) {
     if (err)
         console.log('error: ', error);
@@ -29,10 +31,12 @@ request(urlData, function (err, response, body) {
     }
 });
 
+////////////////////////////////////////////////// Sends json data to frontend /////////////////////////////////////////
 app.get('/graph', function (req, res) {
     res.send(jsonData);
 });
 
+////////////////////////////////////////////////// Runs the server //////////////////////////////////////////////////////
 app.listen(3001, function () {
     console.log("Server is running")
 });

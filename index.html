@@ -5,22 +5,20 @@
     <meta charset="UTF-8">
     <title>Data Visualisation</title>
     <script src="https://d3js.org/d3.v4.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
 </head>
 
 <body>
     <h1>D3 Graph</h1>
     <div id="my_dataviz"></div>
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource@0.1.0"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.js"></script>
-<script src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
 <script>
-
+///////////////////////////////////////////////// D3.js line chart sample ////////////////////////////////////////////////
     // set the dimensions and margins of the graph
     var margin = {top: 10, right: 30, bottom: 30, left: 60},
         width = 460 - margin.left - margin.right,
@@ -72,9 +70,11 @@
                     .y(function(d) { return y(d.value) })
                 )
         })
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 </script>
 <script>
 /*
+/////////////////////////////////////////////  Receive data from app.js  ///////////////////////////////////////////////
     let pos_data;
     $(document).ready(() => {
         $.ajax({
@@ -96,6 +96,6 @@
     });
         */
 </script>
-
 </body>
+
 </html>
